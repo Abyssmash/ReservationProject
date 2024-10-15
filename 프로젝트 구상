@@ -27,7 +27,7 @@ java프로젝트
 사용 프로그램
 - Java JDK 1.8 ver
 - IDE tools : Eclipse
-- DataBase: SQL Plusㅗㅗㅗㅗㅗㅗ
+- DataBase: SQL Plus
 
 주제: <버스 조회, 예약 프로그램>
  
@@ -80,8 +80,8 @@ ERD
 
 (2) Package
 
-[Main]
-- Main (시작 class)
+[main]
+- main (시작 class)
 
 [DAO (data access - CRUD)]
 - 인터페이스 (DBdao)
@@ -97,16 +97,8 @@ DAO
 
 [DTO (data transfer)]
 - User 회원가입 정보 (Super Class: 예약, 조회 둘 다 사용)
- 	String id
- 	String pwd
- 	String name
- 	String birth
- 	String phoneNum
- 	String email
- 	String 성
- 	예약 내역
 
-[Service (Main Frame)]
+[Service (main Frame)]
 기능별로 프레임을 여러개 만들어야 하나?
 - 회원가입 & 로그인 
 회원가입 시 - 회원 정보 등록 프레임

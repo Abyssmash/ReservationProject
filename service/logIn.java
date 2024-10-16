@@ -1,6 +1,6 @@
 package service;
 
-import service.resBus;
+import service.resList;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -45,7 +45,7 @@ public class logIn extends JFrame{
 		L.add(new JTextField(20));
 		
 		
-		setSize(600, 800);
+		setSize(600, 700);
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -58,7 +58,7 @@ public class logIn extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				new resBus();
+				new resList();
 				setVisible(false);	// 사용자에게 가리기
 			}
 		});

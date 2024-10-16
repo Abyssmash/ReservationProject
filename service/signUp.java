@@ -17,7 +17,7 @@ public class signUp extends JFrame{
 		super("회원가입");
 		JPanel signUp = new JPanel();
 		JButton accept = new JButton("확인");
-		setSize(600, 800);
+		setSize(600, 700);
 		accept.add(signUp);
 		add(accept);
 		

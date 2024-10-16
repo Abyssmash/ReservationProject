@@ -37,7 +37,7 @@ public class resList extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				new resBus();
+				new dateHour();
 				setVisible(false);	
 			}	
 		});

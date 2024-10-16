@@ -1,11 +1,11 @@
 package dto;
 
 public class signUpDTO {
-	private String userId = null;
-	private String userPwd = null;
-	private String userName = null;
-	private String userBirth = null;
-	private String userEmail = null;
-	private String userPnum = null;
-	private String userGender = null;
+	String userId = null;
+	String userPwd = null;
+	String userName = null;
+	String userBirth = null;
+	String userEmail = null;
+	String userPnum = null;
+	String userGender = null;
 }

@@ -1,17 +1,12 @@
 package dto;
 
-public class userDTO {
-	private String userId = null;
-	private String userPwd = null;
-	private String userName = null;
-	private String userBirth = null;
-	private String userEmail = null;
-	private String userPnum = null;
-	private String userGender = null;
-	private String resNum = null;
-	private String seatNum = null;
-	private String date = null;
-	private String hour = null;
-	private String departure = null;
-	private String destination = null;
+import dto.signUpDTO;
+
+public class userDTO extends signUpDTO {
+	String resNum = null;
+	String seatNum = null;
+	String date = null;
+	String hour = null;
+	String departure = null;
+	String destination = null;
 }

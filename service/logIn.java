@@ -23,12 +23,13 @@ public class logIn extends JFrame{
 	private JLabel F = new JLabel("로그인");
 	
 	logIn(){
+		super("로그인");
 		title.add(F);
+		add("North",F);
 		JPanel logIn = new JPanel();
 		JButton ok = new JButton("확인");
 		JTextField i = new JTextField(20);
-		setTitle("로그인");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	// 윈도우 종료
 		logIn.add(logIn);
 		add(logIn);
 		
@@ -51,14 +52,14 @@ public class logIn extends JFrame{
 		setLocation((windowSize.width - frameSize.width) / 2,
 				(windowSize.height - frameSize.height) / 2);	
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		setVisible(true);		
+		setVisible(true);	//  사용자에게 보여주기		
 		
 		ok.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				new resBus();
-				setVisible(false);
+				setVisible(false);	// 사용자에게 가리기
 			}
 		});
 		

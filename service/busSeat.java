@@ -66,28 +66,17 @@ public class busSeat extends JFrame {
 				}
 			});
 		}
-
-		
-		
 		
 		setSize(600,700);
-		
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation((windowSize.width - frameSize.width) / 2,
 				(windowSize.height - frameSize.height) / 2);	
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-				setVisible(true);	
-				
-}
-
-
-	
-
-
-
-
+				setVisible(true);				
+	}
+	// 확인용
 	public static void main(String[] args) {
 		busSeat frame = new busSeat();
 	}

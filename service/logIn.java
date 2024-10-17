@@ -1,7 +1,5 @@
 package service;
 
-import service.resList;
-
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;

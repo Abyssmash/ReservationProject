@@ -1,5 +1,6 @@
 package service;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -13,14 +14,17 @@ import javax.swing.WindowConstants;
 // 결제 완료 및 메뉴 돌아가기 창
 public class payOk extends JFrame{
 	JPanel o = new JPanel();
-	JLabel i = new JLabel("결제가 완료되었습니다. 메뉴 화면으로 돌아갑니다.");
+	JLabel i = new JLabel("  결제가 완료되었습니다. 메뉴 화면으로 돌아갑니다.");
 	JButton ok = new JButton("확인");
 	
 	payOk(){
+		super("결제 완료");
+		setLayout(new BorderLayout());
+		add(i,BorderLayout.CENTER);
+		add(ok,BorderLayout.SOUTH);
 		
 		
-		
-		setSize(300,400);
+		setSize(300,200);
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -37,5 +41,8 @@ public class payOk extends JFrame{
 				setVisible(false);
 			}
 		});
+	}
+	public static void main(String[] args) {
+		payOk frame = new payOk();
 	}
 }

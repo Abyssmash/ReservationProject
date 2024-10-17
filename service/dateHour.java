@@ -5,6 +5,7 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,12 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
 // 월, 일, 출발지, 도착지 입력 후 시간 버튼 뜨게 만들기 (시간 버튼은 그리드 레이아웃)
-// 출발지와 도착지는 텍스트로 입력하게 하기
 
 public class dateHour extends JFrame {
-	public void main(String[] args) {
-		new dateHour();
-	}
 	JFrame DH = new JFrame();
 	JPanel dH = new JPanel();
 	JLabel year = new JLabel("2024년");
@@ -65,10 +62,21 @@ public class dateHour extends JFrame {
 		this.add(dstCombo);
 		//----------출발지 도착지 끝
 		
-		
+		//---------시간 버튼 
+		// 시간대 09:00, 11:20, 13:40, 15:30, 17:00, 19:30
+		// 행이 3 열이 2 가로세로 여백 3
+		GridLayout hour = new GridLayout(3,2,3,3);
+		setLayout(hour);
+		JButton[] Hr = new JButton[6];
+		String[] hr = {"09:00","11:20","13:40","15:30","17:00","19:30"};
+		for(int i = 0; i < Hr.length; i++) {
+			Hr[i] = new JButton(hr[i]);
+			Hr[i].setName(hr[i]);
+			add(Hr[i]);
+		}
 		
 		this.setLocationRelativeTo(null);
-		this.setSize(300, 300);
+		this.setSize(600, 700);
 		this.setVisible(true);
 		
 		// 화면 중앙에 배치하는 작업
@@ -79,7 +87,7 @@ public class dateHour extends JFrame {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);	// X버튼 누르면 닫히게
 		setVisible(true);
 		
-		// 그리드 버튼 중 1개라도 누르면 payBus 클래스로 넘어가게 설정
+		// input3 버튼을 누르면 창이 꺼지고 paybus 창이 나오게 설정
 		
 		input3.addActionListener(new ActionListener() {
 			@Override
@@ -90,4 +98,8 @@ public class dateHour extends JFrame {
 			}
 		});
 	}
-}
+		public static void main(String[] args) {
+			dateHour frame = new dateHour();
+		}
+	}
+

@@ -28,10 +28,14 @@ public class logIn extends JFrame{
 		add("North",F);
 		JPanel logIn = new JPanel();
 		JButton ok = new JButton("확인");
-		JTextField i = new JTextField(20);
+		JLabel ID= new JLabel("ID");
+		JLabel PWD = new JLabel("PASSWORD");
+		JTextField id = new JTextField(20);
+		JTextField pwd = new JTextField(20);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	// 윈도우 종료
 		logIn.add(logIn);
 		add(logIn);
+		
 		
 		Container L = getContentPane();
 		L.setLayout(new BorderLayout());
@@ -39,10 +43,6 @@ public class logIn extends JFrame{
 		this.add(L,"Center");
 		this.add(ok,"North");
 		
-		L.add(new JLabel("ID"));
-		L.add(new JTextField(20));
-		L.add(new JLabel("PWD"));
-		L.add(new JTextField(20));
 		
 		
 		setSize(600, 700);

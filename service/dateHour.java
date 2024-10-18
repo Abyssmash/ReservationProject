@@ -10,6 +10,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -20,22 +21,24 @@ import javax.swing.WindowConstants;
 // 월, 일, 출발지, 도착지 입력 후 시간 버튼 뜨게 만들기 (시간 버튼은 그리드 레이아웃)
 
 public class dateHour extends JFrame {
-	JFrame DH = new JFrame();
-	JPanel dH = new JPanel();
-	JLabel year = new JLabel("2024년");
+	JPanel main = new JPanel();
+	JPanel main1 = new JPanel();
+	JPanel main2 = new JPanel();
+	JPanel one = new JPanel();
+	JPanel two = new JPanel();
+	JPanel hour = new JPanel();
+	JPanel thr = new JPanel();
+	JLabel ser = new JLabel("버스 예약 정보를 선택해주세요.");
 	JLabel month = new JLabel("월");
 	JLabel date = new JLabel("일");
 	JLabel departure = new JLabel("출발지");
 	JLabel destination = new JLabel("도착지");
 	JButton input3 = new JButton("확인");
+	ImageIcon img = new ImageIcon("Image/res.png");
+	JLabel in = new JLabel(img, JLabel.CENTER);
 	
 	dateHour(){
 		super("버스 예약 정보");
-		Container sup = DH.getContentPane();
-		sup.add(year, BorderLayout.NORTH);
-		// 패널에 버튼 추가
-		this.setLayout(new FlowLayout());
-		
 		//------------날짜 시작
 		Integer[] arrMonth = new Integer[12];
 		for(int i = 0; i < arrMonth.length; i++) {
@@ -61,12 +64,36 @@ public class dateHour extends JFrame {
 		JComboBox dstCombo = new JComboBox(dst);
 		this.add(dstCombo);
 		//----------출발지 도착지 끝
+		// 패널에 버튼 추가
+		
 		
 		//---------시간 버튼 
 		// 시간대 09:00, 11:20, 13:40, 15:30, 17:00, 19:30
 		// 행이 3 열이 2 가로세로 여백 3
-		GridLayout hour = new GridLayout(3,2,3,3);
-		setLayout(hour);
+		main.add(main1);
+		main.add(main2);
+		main1.add(one);
+		main1.add(two);
+		main2.add(hour);
+		main2.add(thr);
+		this.add(one,"North");
+		this.add(two,"Center");
+		this.add(hour,"Center");
+		this.add(thr,"South");
+		one.setLayout(new FlowLayout());
+		one.add(ser,"North");
+		one.add(in,"Center");
+		two.setLayout(new FlowLayout());
+		two.add(month);
+		two.add(jcbmnt);
+		two.add(date);
+		two.add(jcbdate);
+		two.add(departure);
+		two.add(dptCombo);
+		two.add(destination);
+		two.add(dstCombo);
+		//hour.setLayout(new GridLayout(3,2,3,3));
+		GridLayout H = new GridLayout(3,2,3,3);
 		JButton[] Hr = new JButton[6];
 		String[] hr = {"09:00","11:20","13:40","15:30","17:00","19:30"};
 		for(int i = 0; i < Hr.length; i++) {
@@ -74,11 +101,13 @@ public class dateHour extends JFrame {
 			Hr[i].setName(hr[i]);
 			add(Hr[i]);
 		}
+		//hour.add(H);
+		thr.setLayout(new BorderLayout());
+		thr.add(input3,"North");
 		
 		this.setLocationRelativeTo(null);
 		this.setSize(600, 700);
 		this.setVisible(true);
-		
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();

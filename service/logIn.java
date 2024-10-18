@@ -33,7 +33,7 @@ public class logIn extends JFrame{
 		super("로그인");
 		this.add(title,"North");
 		this.add(logIn,"Center");
-		title.setLayout(new FlowLayout());
+		title.setLayout(new BorderLayout());
 		title.add(F,"North");
 		title.setBackground(Color.lightGray);
 		logIn.setLayout(new FlowLayout());

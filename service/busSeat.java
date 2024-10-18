@@ -1,6 +1,5 @@
 package service;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -17,15 +16,7 @@ import javax.swing.WindowConstants;
 public class busSeat extends JFrame {
 	busSeat(){
 		super("버스 좌석 선택");
-		JFrame res = new JFrame();
-		JPanel bus = new JPanel();
-		
 		// 운전석 출입구 문구가 위쪽 양쪽에 배치되게 설정하기
-		
-		JLabel driver = new JLabel("운전석");
-		JLabel exit = new JLabel("출입구");
-		res.add(driver,"North");
-		bus.add(exit);
 		GridLayout grid = new GridLayout(9,4,3,3);
 		setLayout(grid);
 		JButton[] Bus = new JButton[36];

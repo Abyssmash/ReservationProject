@@ -1,6 +1,8 @@
 package service;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,8 +10,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
+
+import dto.resBusDTO;
+import dto.resListDTO;
 
 // 조회 버튼을 누르면 나오는 class
 // 로그인한 아이디로 예약한 모든 내역을 보여준다. (날짜, 시간, 버스 좌석, 결제 내역)
@@ -17,22 +23,25 @@ import javax.swing.WindowConstants;
 public class allList extends JFrame {
 	allList(){
 		super("조회 목록");
-		JLabel info = new JLabel("조회 목록");
-		JTextArea userID = new JTextArea();
-		JTextArea resNum = new JTextArea();
-		JTextArea seatNum = new JTextArea();
-		JTextArea date = new JTextArea();
-		JTextArea hour = new JTextArea();
-		JTextArea departure = new JTextArea();
-		JTextArea destination = new JTextArea();
-		JTextArea cardNum = new JTextArea();
-		JTextArea receipt = new JTextArea();
+		JPanel title = new JPanel();
+		JPanel info = new JPanel();
+		JPanel acc = new JPanel();
+		JLabel l = new JLabel("조회 목록");
+		JTextArea list = new JTextArea("ID: "+"예약번호: "+"좌석번호: "+"탑승일: "+"탑승시간: "+"출발지: "
+		+"도착지: "+"카드번호: "+"결제금액: ");
 		JButton ok = new JButton("확인");
 		// 예약 취소는 시간 되면 하기....
 		
 		// 모든 텍스트 area에 DB에 저장된 정보 가져오기
 		// 라벨 + 텍스트 박스 형식으로 가운데 배치
 		// 맨 아래에 확인 버튼이 오게 만들기
+		this.add(title,"North");
+		this.add(info,"Cneter");
+		this.add(acc,"South");
+		title.setLayout(new BorderLayout());
+		title.add(l," North");
+		acc.setLayout(new BorderLayout());
+		acc.add(ok,"South");
 		
 		setSize(600,700);
 		// 화면 중앙에 배치하는 작업
@@ -51,5 +60,8 @@ public class allList extends JFrame {
 				setVisible(false);
 			}
 		});
+	}
+	public static void main(String[] args) {
+		allList frame = new allList();
 	}
 }

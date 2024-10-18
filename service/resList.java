@@ -1,12 +1,16 @@
 package service;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
@@ -16,14 +20,23 @@ public class resList extends JFrame {
 	
 	resList(){
 		super("예약 및 조회 서비스");
+		JPanel title = new JPanel();
 		JPanel resList = new JPanel();
 		JButton res = new JButton("예약");
 		JButton list = new JButton("조회");
-		setSize(600,700);
+		ImageIcon icon = new ImageIcon("Image/resList.png");
+		JLabel img = new JLabel(icon, JLabel.CENTER);
+		
+		this.add(title,"Center");
+		this.add(resList,"South");
+		title.setLayout(new BorderLayout());
+		title.add(img);
+		resList.setLayout(new FlowLayout());
 		resList.add(res);
 		resList.add(list);
-		add(resList);
 		
+		
+		setSize(900,600);
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -50,5 +63,8 @@ public class resList extends JFrame {
 				setVisible(false);
 			}
 		});
+	}
+	public static void main(String[] args) {
+		resList frame = new resList();
 	}
 }

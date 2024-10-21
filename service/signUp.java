@@ -7,11 +7,13 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
@@ -34,8 +36,9 @@ public class signUp extends JFrame{
 	JTextField birth = new JTextField(20);
 	JTextField email = new JTextField(20);
 	JTextField pnum = new JTextField(20);
-	JCheckBox gender1 = new JCheckBox("여자");
-	JCheckBox gender2 = new JCheckBox("남자");
+	ButtonGroup b = new ButtonGroup();
+	JRadioButton gender1 = new JRadioButton("여자");
+	JRadioButton gender2 = new JRadioButton("남자");
 	JButton accept = new JButton("확인");
 	
 	signUp(){
@@ -59,11 +62,13 @@ public class signUp extends JFrame{
 		signUp.add(email);
 		signUp.add(userPnum);
 		signUp.add(pnum);
+		b.add(gender1);
+		b.add(gender2);
 		signUp.add(gender1);
 		signUp.add(gender2);
 		ok.add(accept);
 		
-		
+		setVisible(true);
 		setSize(250, 450);
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();

@@ -36,7 +36,7 @@ public class resList extends JFrame {
 		resList.add(list);
 		
 		
-		setSize(800,600);
+		setSize(900,600);
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();

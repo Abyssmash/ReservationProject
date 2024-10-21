@@ -23,7 +23,9 @@ import javax.swing.WindowConstants;
 public class dateHour extends JFrame {
 	JPanel main = new JPanel();
 	JPanel main1 = new JPanel();
+	BorderLayout main11 = new BorderLayout();
 	JPanel main2 = new JPanel();
+	BorderLayout main22 = new BorderLayout();
 	JPanel one = new JPanel();
 	JPanel two = new JPanel();
 	JPanel hour = new JPanel();
@@ -36,9 +38,19 @@ public class dateHour extends JFrame {
 	JButton input3 = new JButton("확인");
 	ImageIcon img = new ImageIcon("Image/res.png");
 	JLabel in = new JLabel(img, JLabel.CENTER);
+	//"09:00","11:20","13:40","15:30","17:00","19:30"
+	JButton h1 = new JButton("09:00");
+	JButton h2 = new JButton("11:20");
+	JButton h3 = new JButton("13:40");
+	JButton h4 = new JButton("15:30");
+	JButton h5 = new JButton("17:00");
+	JButton h6 = new JButton("19:30");
+	BorderLayout b = new BorderLayout();
+	JLabel result = new JLabel();
 	
 	dateHour(){
 		super("버스 예약 정보");
+		this.setLayout(b);
 		//------------날짜 시작
 		Integer[] arrMonth = new Integer[12];
 		for(int i = 0; i < arrMonth.length; i++) {
@@ -72,37 +84,44 @@ public class dateHour extends JFrame {
 		// 행이 3 열이 2 가로세로 여백 3
 		main.add(main1);
 		main.add(main2);
+		main1.setLayout(main11);
 		main1.add(one);
 		main1.add(two);
+		main2.setLayout(main22);
 		main2.add(hour);
 		main2.add(thr);
 		this.add(one,"North");
 		this.add(two,"Center");
 		this.add(hour,"Center");
 		this.add(thr,"South");
-		one.setLayout(new FlowLayout());
+		//one.setLayout(new FlowLayout());
 		one.add(ser,"North");
 		one.add(in,"Center");
-		two.setLayout(new FlowLayout());
-		two.add(month);
+		//two.setLayout(new FlowLayout());
 		two.add(jcbmnt);
-		two.add(date);
+		two.add(month);
 		two.add(jcbdate);
+		two.add(date);
 		two.add(departure);
 		two.add(dptCombo);
 		two.add(destination);
 		two.add(dstCombo);
-		//hour.setLayout(new GridLayout(3,2,3,3));
-		GridLayout H = new GridLayout(3,2,3,3);
-		JButton[] Hr = new JButton[6];
-		String[] hr = {"09:00","11:20","13:40","15:30","17:00","19:30"};
-		for(int i = 0; i < Hr.length; i++) {
-			Hr[i] = new JButton(hr[i]);
-			Hr[i].setName(hr[i]);
-			add(Hr[i]);
-		}
-		//hour.add(H);
-		thr.setLayout(new BorderLayout());
+		//hour.setLayout(new FlowLayout());
+//		GridLayout H = new GridLayout(3,2,3,3);
+//		JButton[] Hr = new JButton[6];
+//		String[] hr = {"09:00","11:20","13:40","15:30","17:00","19:30"};
+//		for(int i = 0; i < Hr.length; i++) {
+//			Hr[i] = new JButton(hr[i]);
+//			Hr[i].setName(hr[i]);
+//			add(Hr[i]);
+//		}
+		hour.add(h1);
+		hour.add(h2);
+		hour.add(h3);
+		hour.add(h4);
+		hour.add(h5);
+		hour.add(h6);
+		//thr.setLayout(new BorderLayout());
 		thr.add(input3,"North");
 		
 		this.setLocationRelativeTo(null);
@@ -122,7 +141,7 @@ public class dateHour extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				new payBus();
+				new busSeat();
 				setVisible(false);
 			}
 		});

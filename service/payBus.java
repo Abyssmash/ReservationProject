@@ -5,6 +5,8 @@ import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -14,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
@@ -36,19 +39,32 @@ public class payBus extends JFrame {
 	JRadioButton m2 = new JRadioButton("청소년");
 	JRadioButton m3 = new JRadioButton("성인");
 	JRadioButton m4 = new JRadioButton("보훈");
-	
+	JTextArea a = new JTextArea();
+
 		payBus(){
 			super("결제 정보");
 			// 카드 선택
 			String[] cardP = {"붕붕카드","레츠고카드","달려카드"};
 			JComboBox cardPCom = new JComboBox(cardP);
 			this.add(cardPCom);
-			
+			JRadioButton [] m = new JRadioButton[4];
+			String[] money = {"10000" , "14000", "20000" ,"12000"};
+			for(int i = 0; i < money.length; i++) {
+				
+			}
 			this.add(title,"North");
 			this.add(pay,"Center");
 			this.add(acc,"South");
 			title.add(w);
 			pay.setLayout(new FlowLayout());
+			b.add(m1);
+			b.add(m2);
+			b.add(m3);
+			b.add(m4);
+			pay.add(m1);
+			pay.add(m2);
+			pay.add(m3);
+			pay.add(m4);
 			pay.add(c);
 			pay.add(cardPCom);
 			pay.add(cNum);
@@ -57,10 +73,20 @@ public class payBus extends JFrame {
 			pay.add(p);
 			pay.add(coin);
 			acc.add(ok);
+
+			
+	class item implements ItemListener{
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					if(e.getItem()==m1)
+				}
+				}
+				
 			
 			
 			
-			setSize(250,700);
+			setSize(350,700);
 			// 화면 중앙에 배치하는 작업
 			Dimension frameSize = getSize();
 			Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -80,6 +106,7 @@ public class payBus extends JFrame {
 				
 			});
 	}
+			}
 		// 확인용
 		public static void main(String[] args) {
 			payBus frame = new payBus();

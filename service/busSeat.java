@@ -3,9 +3,12 @@ package service;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.ItemSelectable;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
 public class busSeat extends JFrame {
+	JPanel b = new JPanel();
 	busSeat(){
 		super("버스 좌석 선택");
 		// 운전석 출입구 문구가 위쪽 양쪽에 배치되게 설정하기
@@ -24,6 +28,7 @@ public class busSeat extends JFrame {
 				"12","13","14","14-1","15","16","17","17-1","18","19","20","20-1","21","22","23",
 				"23-1","24","25","26","27","28"};
 		setBackground(Color.cyan);
+		this.add(b);
 		for(int i = 0; i < Bus.length; i++) {
 			Bus[i]= new JButton(seat[i]);
 			Bus[i].setName(""+(i+1));
@@ -47,6 +52,16 @@ public class busSeat extends JFrame {
 				Bus[i].setVisible(false);
 			}
 			
+			b.addItemListener(new ItemListener() {
+				@Override
+				public void itemStateChanged(ItemEvent e) {
+					if(e.getStateChange()==ItemEvent.SELECTED)
+						b.setEnabled(false);
+					else
+						
+				}
+			});
+
 			// 버튼을 하나라도 눌렀을때 창이 닫히고 결제하는 창이 나오게 하기
 			Bus[i].addActionListener(new ActionListener() {
 				@Override

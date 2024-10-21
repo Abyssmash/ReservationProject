@@ -7,6 +7,8 @@ public class BusDAO {
 	private String driverName = "oracle.jdbc.driver.OracleDriver";
 	public static BusDAO busdao = null;
 	
+	// CRUD 구성 
+	
 	private BusDAO() {
 		init();
 	}
@@ -23,6 +25,18 @@ public class BusDAO {
 		}catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	public void add() {
+		
+	}
+	public ArrayList<>selectAll(){
+		
+	}
+	public void mod() {
+		
+	}
+	public void delete() {
+		
 	}
 	
 }

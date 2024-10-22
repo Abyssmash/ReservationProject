@@ -36,7 +36,7 @@ public class allList extends JFrame {
 		// 라벨 + 텍스트 박스 형식으로 가운데 배치
 		// 맨 아래에 확인 버튼이 오게 만들기
 		this.add(title,"North");
-		this.add(info,"Cneter");
+		this.add(info,"Center");
 		this.add(acc,"South");
 		title.setLayout(new BorderLayout());
 		title.add(l," North");

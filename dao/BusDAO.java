@@ -26,6 +26,13 @@ public class BusDAO {
 			e.printStackTrace();
 		}
 	}
+//	DAO
+//	  포함될 메소드
+//	- 버스 조회(R: select)(데이터 미리 입력: 배차시간 모든 지역 동일)
+//	- 예약 삭제 (Delete)
+//	- 회원가입 (Create)
+//	- 버스 좌석 정보 예약 반영, 일주일 간격 버스 배차(update)
+//	- 예약 조회 (select)
 	public void add() {
 		
 	}

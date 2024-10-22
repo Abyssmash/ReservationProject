@@ -146,11 +146,14 @@ Super Class |	Sub Class
 회원가입 테이블	|	회원 테이블
 버스 테이블		|	예약조회 테이블
 
-마무리 해야할 문제
 
-DB 연동 테이블 value값 입력 
+///마무리 해야할 문제///
+
+DB 연동 테이블 value값 입력할 것 정리
 프레임 DB 연동(actionListener, ItemListener)
 나머지 어색한 테이블 고치기
+ppt 조금 만들어두기
+
 
 
 

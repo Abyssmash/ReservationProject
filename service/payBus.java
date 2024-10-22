@@ -23,6 +23,7 @@ import javax.swing.WindowConstants;
 // 신분과 카드 번호를 입력하고 확인을 누르면
 // 결제되었다는 메시지와 함께 예약됨.
 public class payBus extends JFrame {
+	
 	JPanel title = new JPanel();
 	JPanel pay = new JPanel();
 	JPanel acc = new JPanel();
@@ -75,13 +76,13 @@ public class payBus extends JFrame {
 			acc.add(ok);
 
 			
-	class item implements ItemListener{
-			@Override
-			public void itemStateChanged(ItemEvent e) {
-				if(e.getStateChange() == ItemEvent.SELECTED) {
-					if(e.getItem()==m1)
-				}
-				}
+//	class item implements ItemListener{
+//			@Override
+//			public void itemStateChanged(ItemEvent e) {
+//				if(e.getStateChange() == ItemEvent.SELECTED) {
+//					if(e.getItem()==m1)
+//				}
+//				}
 				
 			
 			
@@ -106,7 +107,6 @@ public class payBus extends JFrame {
 				
 			});
 	}
-			}
 		// 확인용
 		public static void main(String[] args) {
 			payBus frame = new payBus();

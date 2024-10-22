@@ -1,8 +1,5 @@
 package service;
 
-import service.logIn;
-import service.signUp;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -27,7 +24,7 @@ import javax.swing.plaf.PanelUI;
 
 // 처음 열자마자 보이는 화면 
 // 버스 예약 시스템이라는 문구와 로그인 혹은 회원가입 버튼
-public class first extends JFrame{
+public class first extends JFrame {
 	
 	first() {
 		super("버스 예약 시스템");
@@ -68,20 +65,21 @@ public class first extends JFrame{
 				new logIn();
 				setVisible(false);	
 			}
-			
 		});
-		
 		signUp.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				new signUp();
 				setVisible(false);
-			}
-			
-		});
-				
+			}			
+		});			
 	}
+//	@Override
+//	public void actionPerformed(ActionEvent e) {
+//		// TODO Auto-generated method stub
+//		]
+//	}
 	public static void main(String[] args) {
 		first frame = new first();
 	}

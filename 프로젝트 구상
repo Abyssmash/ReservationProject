@@ -146,9 +146,12 @@ Super Class |	Sub Class
 회원가입 테이블	|	회원 테이블
 버스 테이블		|	예약조회 테이블
 
-가장 문제
+마무리 해야할 문제
 
-value값 
+DB 연동 테이블 value값 입력 
+프레임 DB 연동(actionListener, ItemListener)
+나머지 어색한 테이블 고치기
+
 
 
 

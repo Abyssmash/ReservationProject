@@ -42,7 +42,4 @@ public class payOk extends JFrame{
 			}
 		});
 	}
-	public static void main(String[] args) {
-		payOk frame = new payOk();
-	}
 }

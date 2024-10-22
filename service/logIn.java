@@ -44,7 +44,6 @@ public class logIn extends JFrame{
 		this.add(o,"South");
 		o.add(ok);
 		
-		
 		setSize(330, 200);
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();
@@ -62,9 +61,11 @@ public class logIn extends JFrame{
 				setVisible(false);	// 사용자에게 가리기
 			}
 		});
-		
 	}
-	public static void main(String[] args) {
-		logIn frame = new logIn();
-	}
+	
+//	@Override
+//                       	public void actionPerformed(ActionEvent e) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 }

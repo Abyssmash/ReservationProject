@@ -87,7 +87,4 @@ public class signUp extends JFrame{
 			}
 		});
 	}
-	public static void main(String[] args) {
-		signUp frame = new signUp();
-	}
 }

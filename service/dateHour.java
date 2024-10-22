@@ -21,16 +21,13 @@ import javax.swing.WindowConstants;
 // 월, 일, 출발지, 도착지 입력 후 시간 버튼 뜨게 만들기 (시간 버튼은 그리드 레이아웃)
 
 public class dateHour extends JFrame {
-	JPanel main = new JPanel();
 	JPanel main1 = new JPanel();
-	BorderLayout main11 = new BorderLayout();
 	JPanel main2 = new JPanel();
-	BorderLayout main22 = new BorderLayout();
 	JPanel one = new JPanel();
 	JPanel two = new JPanel();
 	JPanel hour = new JPanel();
 	JPanel thr = new JPanel();
-	JLabel ser = new JLabel("버스 예약 정보를 선택해주세요.");
+	JLabel ser = new JLabel("버스 예약 정보를 선택해주세요. 2024년만 예약 가능합니다.");
 	JLabel month = new JLabel("월");
 	JLabel date = new JLabel("일");
 	JLabel departure = new JLabel("출발지");
@@ -82,17 +79,15 @@ public class dateHour extends JFrame {
 		//---------시간 버튼 
 		// 시간대 09:00, 11:20, 13:40, 15:30, 17:00, 19:30
 		// 행이 3 열이 2 가로세로 여백 3
-		main.add(main1);
-		main.add(main2);
-		main1.setLayout(main11);
+		main1.setLayout(new BorderLayout());
 		main1.add(one);
 		main1.add(two);
-		main2.setLayout(main22);
+		main2.setLayout(new BorderLayout());
 		main2.add(hour);
 		main2.add(thr);
 		this.add(one,"North");
 		this.add(two,"Center");
-		this.add(hour,"Center");
+		this.add(hour,"South");
 		this.add(thr,"South");
 		//one.setLayout(new FlowLayout());
 		one.add(ser,"North");
@@ -115,6 +110,7 @@ public class dateHour extends JFrame {
 //			Hr[i].setName(hr[i]);
 //			add(Hr[i]);
 //		}
+		hour.setLayout(new GridLayout(2,3));;
 		hour.add(h1);
 		hour.add(h2);
 		hour.add(h3);
@@ -125,7 +121,7 @@ public class dateHour extends JFrame {
 		thr.add(input3,"North");
 		
 		this.setLocationRelativeTo(null);
-		this.setSize(600, 700);
+		this.setSize(500, 700);
 		this.setVisible(true);
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();

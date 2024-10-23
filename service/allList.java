@@ -24,21 +24,26 @@ public class allList extends JFrame {
 		JPanel info = new JPanel();
 		JPanel acc = new JPanel();
 		JLabel l = new JLabel("조회 목록");
-		JTextArea list = new JTextArea("ID: "+"예약번호: "+"좌석번호: "+"탑승일: "+"탑승시간: "+"출발지: "
-		+"도착지: "+"카드번호: "+"결제금액: ");
+		//JTextArea list = new JTextArea("<html>+ID: <br>예약번호: <br>좌석번호: 
+		//<br>탑승일: <br>탑승시간: <br>출발지: 
+		//<br>도착지: <br>카드번호: <br>결제금액: /<html>");
+		JButton delete = new JButton("취소");
 		JButton ok = new JButton("확인");
 		// 예약 취소는 시간 되면 하기....
 		
 		// 모든 텍스트 area에 DB에 저장된 정보 가져오기
 		// 라벨 + 텍스트 박스 형식으로 가운데 배치
 		// 맨 아래에 확인 버튼이 오게 만들기
+		
+		// ID 예약번호 좌석번호 탑승일 탑슬시간 출발지 도착지 카드번호 결제금액
 		this.add(title,"North");
 		this.add(info,"Center");
 		this.add(acc,"South");
 		title.setLayout(new BorderLayout());
-		title.add(l," North");
+		title.add(l);
 		acc.setLayout(new BorderLayout());
-		acc.add(ok,"South");
+		acc.add(ok);
+		acc.add(delete);
 		
 		setSize(600,700);
 		// 화면 중앙에 배치하는 작업
@@ -57,5 +62,15 @@ public class allList extends JFrame {
 				setVisible(false);
 			}
 		});
-	}
+		delete.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("예약이 취소되었습니다.");
+				new resList();
+				setVisible(false);
+			}
+			
+		});
+	}	
 }

@@ -1,0 +1,78 @@
+<SQL 테이블 저장 내용>
+
+SQL 테이블 저장 내용
+
+create table signUp(
+  2  userId varchar2(10) not null,
+  3  userPwd varchar2(20),
+  4  userName varchar2(20),
+  5  userBirth varchar2(8),
+  6  userEmail varchar2(20),
+  7  userPnum varchar2(11),
+  8  userGender varchar2(2),
+  9  PRIMARY KEY (userId));
+
+create table reservation(
+  2  resNum varchar2(6) not null,
+  3  busNum varchar2(4),
+  4  userId varchar2(10),
+  5  Ydate varchar2(11),
+  6  hour varchar2(5),
+  7  departure varchar2(15),
+  8  destintion varchar2(15),
+  9  cardName varchar2(10),
+ 10  cardNum varchar2(16),
+ 11  receipt varchar2(50),
+ 12  PRIMARY KEY (resNum));
+
+create table bus(
+  2  busNum varchar2(2) not null,
+  3  seatNum varchar2(4),
+  4  resNum varchar2(6),
+  5  Ydate varchar2(10),
+  6  hour varchar2(5),
+  7  departure varchar2(15),
+  8  destination varchar2(15),
+  9  PRIMARY KEY (busNum));
+
+create table Member(
+  2  userId varchar2(10),
+  3  userPwd varchar2(20),
+  4  userName varchar2(20),
+  5  userBirth varchar2(8),
+  6  userEmail varchar2(20),
+  7  userPnum varchar2(11),
+  8  userGender varchar2(2),
+  9  resNum varchar2(6),
+ 10  seatNum varchar2(4),
+ 11  Ydate varchar2(11),
+ 12  hour varchar2(5),
+ 13  departure varchar2(15),
+ 14  destination varchar2(15),
+ 15  cardName varchar2(16),
+ 16  cardNum varchar2(16),
+ 17  receipt varchar2(50),
+ 18  FOREIGN KEY (userId)
+ 19  REFERENCES signUp(userId),
+ 20  FOREIGN KEY (resNum)
+ 21  REFERENCES reservation(resNum));''
+
+멤버 테이블 아이디(회원가입 테이블 참조) 랑 예약번호(예약 테이블 참조) foreign key
+버스 테이블 예약번호 (예약테이블 참조)
+예약 테이블 busNum(버스 테이블) userId(회원가입 테이블)
+
+<foreign key 설정>
+	alter table bus add constraint fk_resNum foreign key (resNum)
+  2  references reservation(resNum);
+
+테이블이 변경되었습니다.
+
+SQL> alter table reservation add constraint fk_busNum foreign key (busNum)
+  2  references bus(busNum);
+
+테이블이 변경되었습니다.
+
+SQL> alter table reservation add constraint fk_userId foreign key (userId)
+  2  references signUp(userId);
+
+테이블이 변경되었습니다.

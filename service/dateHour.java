@@ -47,7 +47,6 @@ public class dateHour extends JFrame {
 	
 	dateHour(){
 		super("버스 예약 정보");
-		this.setLayout(b);
 		//------------날짜 시작
 		Integer[] arrMonth = new Integer[12];
 		for(int i = 0; i < arrMonth.length; i++) {
@@ -131,7 +130,7 @@ public class dateHour extends JFrame {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);	// X버튼 누르면 닫히게
 		setVisible(true);
 		
-		// input3 버튼을 누르면 창이 꺼지고 paybus 창이 나오게 설정
+		// input3 버튼을 누르면 창이 꺼지고 busSeat 창이 나오게 설정
 		
 		input3.addActionListener(new ActionListener() {
 			@Override

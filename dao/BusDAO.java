@@ -57,6 +57,7 @@ public class BusDAO {
 		temp.setHour("13:40");
 		temp.setDeparture("서울");
 		temp.setDestination("부산");
+		temp.setSeatNum("1");
 		temp.setCardNum("1000200030004000");
 		temp.setReceipt("30000원");
 		l.add(temp);

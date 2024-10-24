@@ -162,8 +162,16 @@ DB 연동 테이블 value값 입력할 것 정리
 10/24 : SQL 설계 후 최종 검토 정리를 목표로 함. 및 사진 삽입 후 설명
 10/25 : 발표 당일
 
-
-
+데이터가 너무 방대함..아...
+출력할 데이터
+-userId: 나나
+-resNum: 1
+-busNum: 1
+-Ydate: 20241031
+-hour: 13:40
+-seatNum: 1
+-departure: 서울
+-destination: 부산
 
 	
 	

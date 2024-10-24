@@ -27,7 +27,7 @@ public class busSeat extends JFrame {
 		String [] seat = {"1","2","2-1","3","4","5","5-1","6","7","8","8-1","9","10","11","11-1",
 				"12","13","14","14-1","15","16","17","17-1","18","19","20","20-1","21","22","23",
 				"23-1","24","25","26","27","28"};
-		setBackground(Color.cyan);
+		
 		
 		for(int i = 0; i < Bus.length; i++) {
 			Bus[i]= new JButton(seat[i]);
@@ -67,7 +67,7 @@ public class busSeat extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					new notice();
+					new payBus();
 					setVisible(false);
 				}
 			});

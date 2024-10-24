@@ -1,5 +1,6 @@
 package service;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -7,6 +8,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -21,9 +23,9 @@ import javax.swing.WindowConstants;
 // 마지막 확인 시 예약 또는 조회 화면으로 넘어감
 public class signUp extends JFrame{
 	JPanel title = new JPanel();
-	JPanel signUp = new JPanel();
+	JPanel center = new JPanel();
 	JPanel ok = new JPanel();
-	JLabel t = new JLabel("회원가입");
+	JLabel user = new JLabel("회원가입");
 	JLabel userId = new JLabel("아이디");
 	JLabel userPwd = new JLabel("비밀번호");
 	JLabel userName = new JLabel("이름");
@@ -43,33 +45,35 @@ public class signUp extends JFrame{
 	
 	signUp(){
 		super("회원가입");
-		this.add(title,"North");
-		this.add(signUp,"Center");
-		this.add(ok,"South");
-		title.setLayout(new FlowLayout());
-		title.add(t);
-		title.setBackground(Color.lightGray);
-		signUp.setLayout(new FlowLayout());
-		signUp.add(userId);
-		signUp.add(id);
-		signUp.add(userPwd);
-		signUp.add(pwd);
-		signUp.add(userName);
-		signUp.add(name);
-		signUp.add(userBirth);
-		signUp.add(birth);
-		signUp.add(userEmail);
-		signUp.add(email);
-		signUp.add(userPnum);
-		signUp.add(pnum);
+		
+		this.add(title,BorderLayout.NORTH);
+		this.add(center, BorderLayout.CENTER);
+		this.add(ok, BorderLayout.SOUTH);
 		b.add(gender1);
 		b.add(gender2);
-		signUp.add(gender1);
-		signUp.add(gender2);
+		title.setLayout(new FlowLayout());
+		center.setLayout(new BoxLayout(center, BoxLayout.Y_AXIS));
+		ok.setLayout(new FlowLayout());
+		title.add(user);
+		center.add(userId);
+		center.add(id);
+		center.add(userPwd);
+		center.add(pwd);
+		center.add(userName);
+		center.add(name);
+		center.add(userBirth);
+		center.add(birth);
+		center.add(userEmail);
+		center.add(email);
+		center.add(userPnum);
+		center.add(pnum);
+		center.add(gender1);
+		center.add(gender2);
 		ok.add(accept);
 		
+		
 		setVisible(true);
-		setSize(250, 450);
+		setSize(600, 700);
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -86,5 +90,8 @@ public class signUp extends JFrame{
 				setVisible(false);
 			}
 		});
+	}
+	public static void main(String[] args) {
+		signUp frame = new signUp();
 	}
 }

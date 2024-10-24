@@ -64,4 +64,7 @@ public class resList extends JFrame {
 			}
 		});
 	}
+	public static void main(String[] args) {
+		resList frame = new resList();
+	}
 }

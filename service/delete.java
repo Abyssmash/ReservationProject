@@ -1,5 +1,6 @@
 package service;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -11,41 +12,34 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
-public class notice extends JFrame{
-	JPanel in = new JPanel();
+public class delete extends JFrame{
 	JPanel o = new JPanel();
-	JLabel no = new JLabel("<html> 할인 승차권으로 승차 시 <br>반드시 할인의 기준이 되는 신분증을 지참해야하며, <br>부정승차시 해당 요금의 10배를 부과할 수 있습니다.</html>");
+	JLabel in = new JLabel(" 예약이 취소되었습니다. 메뉴 화면으로 돌아갑니다.<br>결제하신 카드사의 영업일에 따라 환불은 영업일 기준 3~5일 소요됩니다.");
 	JButton ok = new JButton("확인");
 	
-	notice(){
-		this.add(in,"Center");
-		this.add(o,"South");
-		in.add(no);
-		o.add(ok);
+	delete(){
+		super("예약 취소 완료");
+		this.setLayout(new BorderLayout());
+		add(in,BorderLayout.CENTER);
+		add(ok,BorderLayout.SOUTH);
 		
 		
-		
-		
-		setSize(400,300);	
+		setSize(300,200);
 		// 화면 중앙에 배치하는 작업
 		Dimension frameSize = getSize();
 		Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation((windowSize.width - frameSize.width) / 2,
-			(windowSize.height - frameSize.height) / 2);	
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);	// X버튼 누르면 닫히게
-			setVisible(true);
-			
+				(windowSize.height - frameSize.width) / 2);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		setVisible(true);
+		
 		ok.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				new payBus();
+				new resList();
 				setVisible(false);
 			}
-			
 		});
-	}
-	public static void main(String[] args) {
-		notice frame = new notice();
 	}
 }

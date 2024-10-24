@@ -33,7 +33,7 @@ public class logIn extends JFrame{
 		super("로그인");
 		this.add(title,"North");
 		this.add(logIn,"Center");
-		title.setLayout(new BorderLayout());
+		title.setLayout(new FlowLayout());
 		title.add(F,"North");
 		title.setBackground(Color.lightGray);
 		logIn.setLayout(new FlowLayout());
@@ -43,6 +43,7 @@ public class logIn extends JFrame{
 		logIn.add(pwd);
 		this.add(o,"South");
 		o.add(ok);
+		
 		
 		setSize(330, 200);
 		// 화면 중앙에 배치하는 작업
@@ -61,6 +62,9 @@ public class logIn extends JFrame{
 				setVisible(false);	// 사용자에게 가리기
 			}
 		});
+	}
+	public static void main(String[] args) {
+		logIn frame = new logIn();
 	}
 	
 //	@Override

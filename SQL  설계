@@ -79,3 +79,10 @@ SQL> alter table reservation add constraint fk_userId foreign key (userId)
   2  references signUp(userId);
 
 테이블이 변경되었습니다.
+
+
+bus데이터 1개만 넣었음. 
+SQL> insert into bus (busNum, seatNum, Ydate, hour, departure, destination)
+  2  values (1,1,20241031,'13:40','서울','부산');
+
+1 개의 행이 만들어졌습니다.

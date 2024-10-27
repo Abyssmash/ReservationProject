@@ -1,8 +1,8 @@
 package dto;
 
-import dto.resBusDTO;
+import dto.BusDTO;
 
-public class resListDTO extends resBusDTO{
+public class reservationDTO extends BusDTO{
 		private String cardNum = null;
 		private String receipt = null;
 		public String getCardNum() {

@@ -1,6 +1,6 @@
 package dto;
 
-public class resBusDTO {
+public class BusDTO {
 	private String seatNum = null;
 	private String resNum = null;
 	private String userId = null;

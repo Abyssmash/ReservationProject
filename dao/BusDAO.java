@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import dao.oracle;
 import dto.BusDTO;
@@ -27,17 +28,6 @@ public class BusDAO extends oracle implements DBdao{
 //	- 회원가입 (Create)
 //	- 버스 좌석 정보 예약 반영, 일주일 간격 버스 배차(update)
 //	- 예약 조회 (select)
-	public void add(reservationDTO reslistdto) {
-		if(conn()) {
-			try {
-				
-			System.out.println("예약이 완료되었습니다.");
-			}catch(ClassNotFoundException e) {
-				
-			}
-		}
-		 
-	}
 	public ArrayList<reservationDTO>selectAll(){
 //		seatNum = null;
 //		private String resNum = null;
@@ -60,6 +50,21 @@ public class BusDAO extends oracle implements DBdao{
 		temp.setReceipt("30000원");
 		l.add(temp);
 		return l;
+	}
+	@Override
+	public void add(reservationDTO reslistdto) {
+		if(conn()) {
+			try {
+				String sql = "insert into bus values(?,?,?,?,?,?,?,?,?,?)";
+				PreparedStatement psmt = conn.prepareStatement(sql);
+				psmt.setString(1, BusDTO.class);
+				
+				System.out.println("예약이 완료되었습니다.");
+			}catch(ClassNotFoundException e) {
+				
+			}
+		}
+		
 	}
 	@Override
 	public void add(BusDTO resbusdto) {
